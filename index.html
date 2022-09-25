@@ -8,10 +8,105 @@
     <title>Customer Satisfaction</title>
   </head>
   <body>
+    <div class="content">
+      <article>
+        <h2>Chestionar de evaluare a satisfacţiei clienţilor</h2>
+        <h3>
+          Din dorința de a perfecționa activitatea instituției noastre, vă rugăm
+          să completați acest chestionar.
+        </h3>
+        <p>
+          Vă asigurăm că informațiile oferite de dumneavoastră în acest
+          chestionar sunt confidențiale si vor fi utilizate numai pentru
+          îmbunătățirea serviciilor noastre.
+        </p>
+        <form>
+          <fieldset class="contact" id="contact">
+            <p>Informatii de contact:</p>
+            <label for="firstname">Numele</label>
+            <input type="text" id="name" placeholder="Introduceti numele" />
+            <label for="lastname">Prenumele</label>
+            <input type="text" id="name" placeholder="Introduceti prenumele" />
+            <label for="phone">Telefon</label>
+            <input type="text id=phone" placeholder="+40" />
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+            <label for="date">Data cand ati cumparat produsul</label>
+            <input type="date" id="date" />
+            <label for="magazin" class="labeltext">De la ce magazin ati cumparat produsul?</label>
+            <input name="magazin" list="magazin" />
+            <datalist id="magazin">
+              <label>Alegeti din lista</label>
+              <select name="magazin">
+                <option selected>Select one...</option>
+                <option value="nord">Magazin Nord</option>
+                <option value="sud">Magazin Sud</option>
+                <option value="vest">Magazin Vest</option>
+              </select>
+
+          </fieldset>
+          <fieldset class="product">
+            <p>About your product</p>
+            <label for="qty" class="labeltext">
+              Haow many products wold you like</label
+            >
+            <input type="number" id="qty" min="1" max="5" />
+            <p class="labeltext">What type of bottom crust?</p>
+            <label>
+              <input type="radio" name="bottom" value="classic" />Classic
+            </label>
+            <label
+              type="radio"
+              name="bottom"
+              value="Gluten-Free Classic"
+            ></label>
+            <p class="labeltext">What type of top crust?</p>
+            <label>
+              <input type="radio" name="top" value="full" />Classic Full crust
+            </label>
+            <label>
+              <input type="radio" name="top" value="lattice" />Lattice
+            </label>
+            <label>
+              <input type="radio" name="top" value="gflattice" />Gluten-Free
+              Lattice
+            </label>
+            <label>
+              <input type="radio" name="top" value="none" />No top crust
+            </label>
+            <label for="filling" class="labeltext">What type of filling?</label>
+            <input name="filling" list="filling" />
+            <datalist id="filling">
+              <label>Or select from the list</label>
+              <select name="filling">
+                <option selected>Select one...</option>
+                <option value="apple">Apple</option>
+                <option value="Option1">Option1</option>
+                <option value="Option2">Option2</option>
+                <option value="Option3">Option3</option>
+                <option value="Option4">Option4</option>
+              </select>
+            </datalist>
+            <label>
+              <input type="checkbox" id="sugarfree" value="sugarfree" />
+            </label>
+            <fieldset class="evaluation">
+            <label class="labeltext"
+              >Special requests:
+              <areatext id="comments" placeholder="Any instructions for us?">
+              </areatext>
+            </label>
+            <button type="submit">Submit</button>
+          </fieldset>
+              <div class="stars"></div>
     <div class="stars"></div>
     <div class="stars"></div>
     <div class="stars"></div>
-    <div class="stars"></div>
+    </fieldset>
+        </form>
+      </article>
+          </div>
+
     <script src="script.js"></script>
   </body>
 </html>
