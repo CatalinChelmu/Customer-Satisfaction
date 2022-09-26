@@ -1,18 +1,17 @@
 // ==== Validare empty text ======
 
 // ==== Validare telefon ======
+function validateTelefon() {
+  var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  return re.test(document.getElementById("telefon").value);
+}
 
 // ==== Validare email ======
 function validateEmail(inputText) {
-  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (inputText.value.match(mailformat)) {
-    alert("Valid email address!");
-    return true;
-  } else {
-    alert("Intoduceti o adresa de email valida!");
-    return false;
-  }
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //regex:incepe cu(^\) si se termina cu ($/) ce contine orice cuvânt repetat sau nu (\w+), poate avea un punct sau un cratimă după cuvântul respectiv([\.-]?\w+)*, după care trebuie să aibă un @(\w+), poate avea un punct sau un cratimă după cuvântul respectiv([\.-]?\w+)*, după care trebuie să aibă un punct(\.\w{2,3})+$/;
+  return mailformat.test(document.getElementById("email").value);
 }
+
 // ==== Stocare local input======
 
 document.getElementById("button").addEventListener("click", addToStorage);
@@ -29,9 +28,24 @@ console.log(clienti);
 
 function addToStorage() {
   let tempFirst = document.getElementById("firstName").value;
+
   let tempLast = document.getElementById("lastName").value;
   let tempTelefon = document.getElementById("telefon").value;
+  if (!validateTelefon()) {
+    document.getElementById("phone_error").classList.remove("hidden");
+  } else {
+    document.getElementById("phone_error").classList.add("hidden");
+    alert("Telefon valid");
+  }
+
   let tempEmail = document.getElementById("email").value;
+  if (!validateEmail()) {
+    document.getElementById("email_error").classList.remove("hidden");
+  } else {
+    document.getElementById("email_error").classList.add("hidden");
+    alert("Email valid");
+  }
+
   let tempData = document.getElementById("data").value;
   let tempMagazin = document.getElementById("magazin").value;
   let tempMesaj = document.getElementById("areatext").value;
@@ -45,6 +59,7 @@ function addToStorage() {
     mesaj: tempMesaj,
   });
   localStorage.setItem("tester1", myObj);
+  event.preventDefault();
 }
 
 function viewStorage() {

@@ -38,9 +38,20 @@
               placeholder="Introduceti prenumele"
             />
             <label for="telefon">Telefon</label>
-            <input type="text" id="telefon" name="telefon" placeholder="+40" />
+            <input
+              type="text"
+              id="telefon"
+              name="telefon"
+              placeholder="123-456-789"
+            />
+            <div id="phone_error" class="error hidden">
+              Introduceti un numar de telefon valid!
+            </div>
             <label for="email">Email</label>
             <input type="text" id="email" name="email" />
+            <div id="email_error" class="error hidden">
+              Introduceti o adresa de email valida!
+            </div>
             <label for="data">Data cand ati cumparat produsul</label>
             <input type="date" id="data" name="data" />
             <label for="magazin" class="labeltext"

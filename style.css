@@ -73,6 +73,14 @@ button:hover,
 .button:hover {
   background-color: #ad0054;
 }
+.error {
+  color: red;
+  size: 80%;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
 
 /* ==== media tablet devices (768px and up) =====*/
 @media (min-width: 550px) {
