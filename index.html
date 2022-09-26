@@ -21,91 +21,60 @@
           îmbunătățirea serviciilor noastre.
         </p>
         <form>
-          <fieldset class="contact" id="contact">
+          <article class="contact" id="contact">
             <p>Informatii de contact:</p>
-            <label for="firstname">Numele</label>
-            <input type="text" id="name" placeholder="Introduceti numele" />
-            <label for="lastname">Prenumele</label>
-            <input type="text" id="name" placeholder="Introduceti prenumele" />
-            <label for="phone">Telefon</label>
-            <input type="text id=phone" placeholder="+40" />
+            <label for="firstName">Numele</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Introduceti numele"
+            />
+            <label for="lastName">Prenumele</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Introduceti prenumele"
+            />
+            <label for="telefon">Telefon</label>
+            <input type="text" id="telefon" name="telefon" placeholder="+40" />
             <label for="email">Email</label>
-            <input type="text" id="email" />
-            <label for="date">Data cand ati cumparat produsul</label>
-            <input type="date" id="date" />
-            <label for="magazin" class="labeltext">De la ce magazin ati cumparat produsul?</label>
-            <input name="magazin" list="magazin" />
+            <input type="text" id="email" name="email" />
+            <label for="data">Data cand ati cumparat produsul</label>
+            <input type="date" id="data" name="data" />
+            <label for="magazin" class="labeltext"
+              >De la ce magazin ati cumparat produsul?</label
+            >
+            <input
+              id="magazin"
+              name="magazin"
+              list="magazin"
+              placeholder="Alegeti din lista"
+            />
             <datalist id="magazin">
-              <label>Alegeti din lista</label>
               <select name="magazin">
                 <option selected>Select one...</option>
-                <option value="nord">Magazin Nord</option>
-                <option value="sud">Magazin Sud</option>
-                <option value="vest">Magazin Vest</option>
-              </select>
-
-          </fieldset>
-          <fieldset class="product">
-            <p>About your product</p>
-            <label for="qty" class="labeltext">
-              Haow many products wold you like</label
-            >
-            <input type="number" id="qty" min="1" max="5" />
-            <p class="labeltext">What type of bottom crust?</p>
-            <label>
-              <input type="radio" name="bottom" value="classic" />Classic
-            </label>
-            <label
-              type="radio"
-              name="bottom"
-              value="Gluten-Free Classic"
-            ></label>
-            <p class="labeltext">What type of top crust?</p>
-            <label>
-              <input type="radio" name="top" value="full" />Classic Full crust
-            </label>
-            <label>
-              <input type="radio" name="top" value="lattice" />Lattice
-            </label>
-            <label>
-              <input type="radio" name="top" value="gflattice" />Gluten-Free
-              Lattice
-            </label>
-            <label>
-              <input type="radio" name="top" value="none" />No top crust
-            </label>
-            <label for="filling" class="labeltext">What type of filling?</label>
-            <input name="filling" list="filling" />
-            <datalist id="filling">
-              <label>Or select from the list</label>
-              <select name="filling">
-                <option selected>Select one...</option>
-                <option value="apple">Apple</option>
-                <option value="Option1">Option1</option>
-                <option value="Option2">Option2</option>
-                <option value="Option3">Option3</option>
-                <option value="Option4">Option4</option>
+                <option>Magazin Nord</option>
+                <option>Magazin Sud</option>
+                <option>Magazin Vest</option>
               </select>
             </datalist>
-            <label>
-              <input type="checkbox" id="sugarfree" value="sugarfree" />
-            </label>
-            <fieldset class="evaluation">
             <label class="labeltext"
-              >Special requests:
-              <areatext id="comments" placeholder="Any instructions for us?">
-              </areatext>
+              >Aveti ceva sa ne spune-ti :
+              <input
+                type="text"
+                id="areatext"
+                class="areatext"
+                placeholder="Tastati aici .."
+              />
             </label>
-            <button type="submit">Submit</button>
-          </fieldset>
-              <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    </fieldset>
+            <button type="submit" id="button">Submit</button>
+            <div id="seeButton">View Storage</div>
+          </article>
         </form>
       </article>
-          </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

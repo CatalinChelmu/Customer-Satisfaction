@@ -1,57 +1,53 @@
-const starContainers = document.querySelectorAll(".stars");
-starContainers.forEach((el) => {
-  const starsUL = createElements(el, "ul", "main");
-  const output = createElements(el, "div", "output");
-  for (let x = 0; x < 5; x++) {
-    const star = createElements(starsUL, "li", "star");
-    star.innerHTML = "&#10029;";
-    star.starValue = x + 1;
-    ["mouseover", "mouseout", "click"].forEach((ele) => {
-      star.addEventListener(ele, starRate);
-    });
-  }
-});
+// ==== Validare empty text ======
 
-function starRate(e) {
-  ///console.log(e.type);
-  //console.log(e.target.starValue);
-  const eventType = e.type;
-  const parent = e.target.closest(".stars");
-  console.log(parent);
-  const output = parent.querySelector(".output");
-  const curStars = parent.querySelectorAll(".star");
-  if (eventType === "click") {
-    output.innerHTML = `You Rated this ${e.target.starValue} stars`;
-    addColor(curStars, e.target.starValue);
-  } else if (eventType === "mouseover") {
-    addYellow(curStars, e.target.starValue);
+// ==== Validare telefon ======
+
+// ==== Validare email ======
+function validateEmail(inputText) {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (inputText.value.match(mailformat)) {
+    alert("Valid email address!");
+    return true;
+  } else {
+    alert("Intoduceti o adresa de email valida!");
+    return false;
   }
 }
-function addYellow(curStars, val) {
-  console.log(val);
-  curStars.forEach((star, index) => {
-    if (index < val) {
-      star.classList.add("yellow");
-    } else {
-      star.classList.remove("yellow");
-    }
+// ==== Stocare local input======
+
+document.getElementById("button").addEventListener("click", addToStorage);
+document.getElementById("seeButton").addEventListener("click", viewStorage);
+const clienti = JSON.parse(localStorage.getItem("tester1")) || {
+  firstName: "none",
+  lastName: "none",
+  telefon: "none",
+  data: "none",
+  magazin: "none",
+  mesaj: "none",
+};
+console.log(clienti);
+
+function addToStorage() {
+  let tempFirst = document.getElementById("firstName").value;
+  let tempLast = document.getElementById("lastName").value;
+  let tempTelefon = document.getElementById("telefon").value;
+  let tempEmail = document.getElementById("email").value;
+  let tempData = document.getElementById("data").value;
+  let tempMagazin = document.getElementById("magazin").value;
+  let tempMesaj = document.getElementById("areatext").value;
+  let myObj = JSON.stringify({
+    firstName: tempFirst,
+    lastName: tempLast,
+    telefon: tempTelefon,
+    email: tempEmail,
+    data: tempData,
+    magazin: tempMagazin,
+    mesaj: tempMesaj,
   });
+  localStorage.setItem("tester1", myObj);
 }
 
-function addColor(curStars, val) {
-  console.log(val);
-  curStars.forEach((star, index) => {
-    if (index < val) {
-      star.classList.add("orange");
-    } else {
-      star.classList.remove("orange");
-    }
-  });
-}
-
-function createElements(parent, elType, myClass) {
-  const el = document.createElement(elType);
-  el.classList.add(myClass);
-  parent.append(el);
-  return el;
+function viewStorage() {
+  let tempHolder = JSON.parse(localStorage.getItem("tester1")) || clienti;
+  console.log(tempHolder);
 }

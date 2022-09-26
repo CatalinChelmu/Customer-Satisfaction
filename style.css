@@ -29,27 +29,6 @@ h3 {
   padding: 20px;
   background: #fff6e0;
 }
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-  display: block;
-}
-fieldset.contact {
-  margin-bottom: 1em;
-  width: 45%;
-  border: 1px solid black;
-}
-fieldset.product {
-  margin-top: 2em;
-  width: 45%;
-  border: 1px solid black;
-}
-legend {
-  padding: 0;
-  margin: 0;
-  font: 1.2em bold #c80060;
-}
 label {
   display: block;
 }
@@ -58,9 +37,9 @@ label {
   font-weight: bold;
 }
 .labeltext {
-  display: block;
   font-weight: bold;
   margin-top: 1em;
+  display: block;
 }
 select + label {
   display: inline;
@@ -71,13 +50,9 @@ select + label {
 input {
   width: 20em;
 }
-input[type="radio"],
-input[type="checkbox"] {
-  width: 1.5em;
-}
-areatext {
+.areatext {
   display: block;
-  width: 25%;
+  width: 30%;
   height: 15em;
   margin-bottom: 1em;
   border: 1px solid black;
@@ -99,28 +74,6 @@ button:hover,
   background-color: #ad0054;
 }
 
-/* ====star styling =====*/
-.stars ul {
-  list-style-type: none;
-  padding: 0;
-}
-.star {
-  font-size: 2em;
-  color: #ddd;
-  display: inline-block;
-}
-/* .yellow {
-  color: yellow;
-} */
-.orange {
-  color: orange;
-}
-.output {
-  background-color: #ddd;
-  border: 1px solid #eee;
-  margin: 10px 0;
-  padding: 10px;
-}
 /* ==== media tablet devices (768px and up) =====*/
 @media (min-width: 550px) {
   .wrapper {
